@@ -1,0 +1,68 @@
+
+Commands available:
+
+restaurants
+	Description: Lists all the recommended restaurants in Mid and South California
+
+	Options:
+		* city=<name> | zipcode=<code>  [default: all]
+		Description: Specifies a city or zipcode within which to limit the results.
+
+		* order_by_phone | order_online | favorite [default: none]
+		Description: Specifies whether the restaurants has phone or website to order
+		food remotely, type favorite to get your favorite list.
+
+		* ratings | popularity | price | name [default: ratings]
+		Description: Specifies whether to sort by ratings, popularity, price or
+		alphabetically.
+
+		* top=<limit>|bottom=<limit> [default: top=10]
+		Description: Specifies whether to list the top <limit> matches or the
+		bottom <limit> matches.
+
+reviews
+	Description: Lists recently Yelp reviews for the recommended restaurants
+
+	Options:
+		* city=<name> | zipcode=<code>  [default: all]
+		Description: Specifies a city or zipcode within which to limit the results.
+
+		* timestamp | rating | length [default: timestamp]
+		Description: Specifies whether to sort by timestamp, rating value, or
+		the comment text length.
+
+		* top=<limit>|bottom=<limit> [default: top=10]
+		Description: Specifies whether to list the top <limit> matches or the
+		bottom <limit> matches.
+
+cities
+	Description: Lists cities according to specified parameters.
+	Only cities with more than 1 recommended restaurant with yelp reviews will be
+	listed in results.
+
+	Options:
+		* avg_rating | avg_price | count [default: avg_ratings]
+		Description: Specifies whether to sort by average rating, average price
+		or the count.
+
+		* top=<limit>|bottom=<limit> [default: top=10]
+		Description: Specifies whether to list the top <limit> matches or the
+		bottom <limit> matches.
+
+detail <name|prefix>
+	Description: Check the restaurant detail. You need to specify the restaurant
+	name but you don't need to type the full name.
+
+	After you run detail:
+		You can use two need commands:
+		- favorite: Add the restaurant to your favorite list, call 'restaurants
+		favorite' to see the favorite list
+		- nearby: Plot the nearby restaurants on the map by plot.ly.
+
+map
+	Description: Plot all the recommendations on the map by plot.ly.
+
+update
+	Description: Wipe the database and pull over the data from EATER.com and Yelp
+	again. It may take several minutes without cache.
+	Note: Run update command will reset all the data. Your favorites will be lost.
